@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jesús Arismendy Lobato — Data Analyst | Data Engineer | BI Developer</title>
+  <meta name="description" content="Portafolio profesional de Jesús Arismendy Lobato: analista de datos, ingeniero de datos y desarrollador BI especializado en SQL, Power BI, Python, ETL y automatización." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0b0f1a;
+      --bg2: #111827;
+      --bg3: #1a2235;
+      --panel: #121a2b;
+      --panel2: #172036;
+      --accent: #c9a84c;
+      --accent2: #e8c870;
+      --green: #42d392;
+      --blue: #8ab4ff;
+      --text: #ece9df;
+      --muted: #969bab;
+      --muted2: #c2c4cc;
+      --border: rgba(201,168,76,0.18);
+      --border2: rgba(255,255,255,0.08);
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --shadow: 0 24px 70px rgba(0,0,0,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at 78% 8%, rgba(201,168,76,0.10), transparent 32rem),
+        radial-gradient(circle at 20% 36%, rgba(80,120,255,0.07), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: .55;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(11,15,26,0.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(201,168,76,0.10);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.13rem;
+      letter-spacing: .02em;
+      color: var(--accent);
+    }
+
+    .nav-logo span { color: var(--muted); font-family: var(--sans); font-size: .78rem; margin-left: .4rem; }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transition: color .25s, border-color .25s, background .25s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .nav-pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .45rem 1rem;
+      color: var(--accent) !important;
+      background: rgba(201,168,76,.06);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(340px, .86fr);
+      align-items: center;
+      gap: 4rem;
+      padding: 8.5rem 3rem 5rem;
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      right: -4rem;
+      top: 0;
+      bottom: 0;
+      width: 54%;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to left, rgba(0,0,0,.58), transparent);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .74rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(201,168,76,.08);
+      border: 1px solid var(--border);
+      padding: .36rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.7rem;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero-badge span, .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      box-shadow: 0 0 12px rgba(201,168,76,.6);
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.1rem, 6vw, 5.25rem);
+      line-height: 1.02;
+      letter-spacing: -.025em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp .8s .1s ease both;
+    }
+
+    h1 em { color: var(--accent); font-style: italic; }
+
+    .hero-desc {
+      max-width: 590px;
+      color: var(--muted2);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 2.2rem;
+      animation: fadeUp .8s .2s ease both;
+    }
+
+    .hero-desc strong { color: var(--text); font-weight: 600; }
+
+    .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; animation: fadeUp .8s .3s ease both; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      text-decoration: none;
+      padding: .78rem 1.7rem;
+      border-radius: 6px;
+      font-size: .86rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      transition: all .25s;
+      cursor: pointer;
+      border: none;
+      font-family: var(--sans);
+    }
+
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,168,76,.24); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.17); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(95px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.075);
+      animation: fadeUp .8s .4s ease both;
+      max-width: 650px;
+    }
+
+    .stat-num { font-family: var(--serif); font-size: 2rem; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: .35rem; }
+
+    .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; min-height: 430px; padding: 4.4rem 4.8rem; animation: fadeIn 1s .5s ease both; }
+
+    .data-card {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 400px);
+      background: linear-gradient(180deg, rgba(255,255,255,.035), transparent), var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .data-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 12%;
+      right: 12%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+    }
+
+    .card-label { font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: .8rem; }
+    .card-title { font-family: var(--serif); font-size: 1.45rem; margin-bottom: 1.25rem; }
+
+    .mini-chart { display: flex; flex-direction: column; gap: .78rem; margin-bottom: 1.25rem; }
+    .bar-row { display: flex; align-items: center; gap: .75rem; }
+    .bar-name { font-size: .78rem; color: var(--muted2); width: 104px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 7px; background: rgba(255,255,255,.07); border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(to right, var(--accent), var(--accent2)); animation: barGrow 1.2s cubic-bezier(.4,0,.2,1) both; transform-origin: left; }
+    .bar-pct { width: 34px; text-align: right; font-family: var(--mono); font-size: .68rem; color: var(--accent); }
+
+    .source-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .source-strip span, .chip, .tag, .tech-tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(201,168,76,.09);
+      border: 1px solid rgba(201,168,76,.16);
+      color: var(--accent);
+      font-size: .7rem;
+      padding: .23rem .62rem;
+      letter-spacing: .035em;
+    }
+
+    .float-tag {
+      position: absolute;
+      z-index: 1;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .55rem 1rem;
+      font-size: .78rem;
+      color: var(--muted2);
+      white-space: nowrap;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: 0 14px 40px rgba(0,0,0,.24);
+    }
+
+    .float-tag.t1 { top: 1.6rem; right: 1.4rem; animation-delay: 0s; }
+    .float-tag.t2 { bottom: 1.6rem; left: 1.4rem; animation-delay: 1.4s; }
+
+    section { padding: 7rem 3rem; max-width: 1240px; margin: 0 auto; position: relative; }
+    .section-wide { max-width: 100%; background: rgba(17,24,39,.82); padding-left: 0; padding-right: 0; }
+    .section-inner { max-width: 1240px; margin: 0 auto; padding: 0 3rem; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--accent);
+      margin-bottom: .85rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 65px; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.05rem); line-height: 1.12; margin-bottom: 1rem; letter-spacing: -.01em; }
+    .section-sub { color: var(--muted2); max-width: 680px; margin-bottom: 3.4rem; line-height: 1.8; }
+
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: start; }
+    .about-text p { color: var(--muted2); margin-bottom: 1.2rem; font-size: .98rem; }
+    .about-text strong { color: var(--text); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.4rem; }
+
+    .profile-card, .info-card, .skill-card, .project-card, .service-card, .contact-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,.035), transparent), var(--bg2);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card { padding: 1.6rem; border-color: var(--border); }
+    .profile-card::before, .project-card.featured::before, .contact-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+    }
+
+    .info-row { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,.07); padding: .75rem 0; font-size: .86rem; }
+    .info-row:last-child { border-bottom: 0; }
+    .info-row span:first-child { color: var(--muted); }
+    .info-row span:last-child { color: var(--text); font-weight: 500; text-align: right; }
+
+    .about-mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .info-card { padding: 1.35rem; }
+    .info-icon { font-size: 1.45rem; margin-bottom: .75rem; }
+    .info-title { font-weight: 600; margin-bottom: .35rem; }
+    .info-desc { color: var(--muted); font-size: .84rem; line-height: 1.6; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.35rem; }
+    .skill-card { padding: 1.55rem; transition: border-color .3s, transform .3s; }
+    .skill-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--accent), transparent); transform: scaleX(0); transition: transform .3s; }
+    .skill-card:hover { border-color: var(--border); transform: translateY(-4px); }
+    .skill-card:hover::after { transform: scaleX(1); }
+    .skill-icon { font-size: 1.55rem; margin-bottom: .85rem; }
+    .skill-name { font-weight: 600; font-size: 1rem; margin-bottom: .35rem; }
+    .skill-desc { color: var(--muted); font-size: .84rem; line-height: 1.65; }
+    .skill-tags, .project-meta { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }
+
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.35rem; }
+    .project-card { padding: 1.75rem; transition: all .3s; }
+    .project-card:hover { border-color: var(--border); transform: translateY(-4px); box-shadow: 0 18px 45px rgba(0,0,0,.24); }
+    .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(290px,.92fr); gap: 2rem; align-items: center; border-color: var(--border); }
+    .project-number { font-family: var(--serif); font-size: 3.2rem; color: rgba(201,168,76,.15); line-height: 1; margin-bottom: .9rem; }
+    .project-title { font-family: var(--serif); font-size: 1.45rem; line-height: 1.15; margin-bottom: .65rem; }
+    .project-desc { color: var(--muted2); font-size: .88rem; line-height: 1.75; margin-bottom: 1rem; }
+    .project-problem { color: var(--muted); font-size: .82rem; border-left: 2px solid var(--accent); padding-left: .8rem; font-style: italic; line-height: 1.65; }
+    .project-result { display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem; color: var(--accent); background: rgba(201,168,76,.08); padding: .42rem .9rem; border-radius: 999px; border: 1px solid var(--border); margin-top: 1.1rem; }
+
+    .project-visual { background: var(--bg3); border-radius: 12px; min-height: 230px; padding: 1rem; overflow: hidden; border: 1px solid rgba(255,255,255,.06); }
+    .visual-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-family: var(--mono); font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .9rem; }
+    .kpi-box { background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: .8rem; }
+    .kpi-value { font-family: var(--serif); font-size: 1.35rem; color: var(--accent); line-height: 1; }
+    .kpi-label { color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; margin-top: .25rem; }
+    .bars { display: flex; align-items: flex-end; gap: .45rem; height: 92px; }
+    .p-bar { flex: 1; border-radius: 5px 5px 0 0; background: linear-gradient(to top, var(--accent), rgba(201,168,76,.38)); animation: barUp 1s cubic-bezier(.4,0,.2,1) both; transform-origin: bottom; }
+
+    .timeline-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 4rem; align-items: start; }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--accent), transparent); }
+    .tl-item { position: relative; margin-bottom: 2rem; }
+    .tl-dot { position: absolute; left: -2.35rem; top: .4rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg2); box-shadow: 0 0 0 3px rgba(201,168,76,.18); }
+    .tl-date { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: .25rem; }
+    .tl-role { font-weight: 600; font-size: 1rem; margin-bottom: .25rem; }
+    .tl-desc { color: var(--muted2); font-size: .88rem; line-height: 1.7; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .service-card { padding: 1.35rem; transition: transform .3s, border-color .3s; }
+    .service-card:hover { transform: translateY(-4px); border-color: var(--border); }
+    .service-icon { font-size: 1.4rem; margin-bottom: .65rem; }
+    .service-title { font-weight: 600; margin-bottom: .35rem; }
+    .service-desc { color: var(--muted); font-size: .82rem; line-height: 1.62; }
+
+    .contact-wrap { text-align: center; padding: 4rem 2.2rem; border-color: var(--border); }
+    .contact-wrap h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.1rem); margin-bottom: .85rem; }
+    .contact-wrap p { color: var(--muted2); max-width: 640px; margin: 0 auto 2.1rem; }
+    .contact-links { display: flex; justify-content: center; gap: .85rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+    .contact-link { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--muted2); font-size: .85rem; padding: .65rem 1.15rem; border: 1px solid rgba(255,255,255,.10); border-radius: 999px; transition: all .25s; background: rgba(255,255,255,.02); }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    footer { text-align: center; padding: 2.5rem 1.5rem; border-top: 1px solid rgba(255,255,255,.055); color: var(--muted); font-size: .78rem; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(11,15,26,.92); backdrop-filter: blur(12px); z-index: 250; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .modal-box { width: min(720px, 100%); max-height: 84vh; overflow-y: auto; background: var(--bg2); border: 1px solid var(--border); border-radius: 18px; padding: 2rem; box-shadow: var(--shadow); transform: translateY(18px); transition: transform .3s; position: relative; }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 1.25rem; }
+    .modal-close:hover { color: var(--accent); }
+    .modal-num { font-family: var(--mono); color: var(--accent); font-size: .75rem; letter-spacing: .12em; margin-bottom: .5rem; }
+    .modal-title { font-family: var(--serif); font-size: 2rem; line-height: 1.1; margin-bottom: 1rem; }
+    .modal-section-title { font-family: var(--mono); font-size: .72rem; color: var(--accent); text-transform: uppercase; letter-spacing: .12em; margin: 1.2rem 0 .45rem; }
+    .modal-desc { color: var(--muted2); line-height: 1.75; font-size: .9rem; }
+    .modal-list { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .modal-list li { position: relative; padding-left: 1.1rem; color: var(--muted2); font-size: .88rem; line-height: 1.65; }
+    .modal-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: all .65s cubic-bezier(.4,0,.2,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes barUp { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .42; } }
+
+    @media (max-width: 980px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 7.5rem 1.5rem 4rem; gap: 3rem; }
+      .hero-visual { justify-content: flex-start; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 5rem 1.5rem; }
+      .section-inner { padding: 0 1.5rem; }
+      .about-grid, .timeline-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-mini-grid, .skills-grid, .services-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      h1 { font-size: 3.2rem; }
+      .hero-actions { align-items: stretch; }
+      .btn { width: 100%; }
+      .hero-stats { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+      .hero-visual { display: none; }
+      .contact-wrap { padding: 2.6rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="#inicio">J. Arismendy <span>Data & BI</span></a>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#logros">Logros</a></li>
+      <li><a href="#contacto" class="nav-pill">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="hero" id="inicio">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-badge"><span></span> Disponible para nuevas oportunidades</div>
+        <h1>Jesús<br><em>Arismendy</em><br>Lobato</h1>
+        <p class="hero-desc">
+          <strong>Analista de Datos, Ingeniero de Datos y Desarrollador BI</strong> especializado en convertir datos operativos complejos en soluciones automatizadas, tableros ejecutivos e indicadores accionables para entornos industriales y minería.
+        </p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+          <a href="CV-Jesus-Arismendy-Lobato.pdf" class="btn btn-outline" download>Descargar CV</a>
+          <a href="#contacto" class="btn btn-outline">Contactar</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">3+</div><div class="stat-label">Años en datos</div></div>
+          <div><div class="stat-num">6+</div><div class="stat-label">Proyectos clave</div></div>
+          <div><div class="stat-num">7+</div><div class="stat-label">Fuentes integradas</div></div>
+          <div><div class="stat-num">SQL+</div><div class="stat-label">Consultas optimizadas</div></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="float-tag t1"><span class="dot"></span> Power BI · DAX · KPIs</div>
+        <div class="float-tag t2"><span class="dot"></span> Python · ETL · SQL</div>
+        <div class="data-card">
+          <div class="card-label">Perfil técnico · foco profesional</div>
+          <div class="card-title">Stack principal</div>
+          <div class="mini-chart">
+            <div class="bar-row"><span class="bar-name">SQL Server</span><div class="bar-track"><div class="bar-fill" style="width:94%;animation-delay:.55s"></div></div><span class="bar-pct">94</span></div>
+            <div class="bar-row"><span class="bar-name">Power BI</span><div class="bar-track"><div class="bar-fill" style="width:90%;animation-delay:.65s"></div></div><span class="bar-pct">90</span></div>
+            <div class="bar-row"><span class="bar-name">Python</span><div class="bar-track"><div class="bar-fill" style="width:88%;animation-delay:.75s"></div></div><span class="bar-pct">88</span></div>
+            <div class="bar-row"><span class="bar-name">Oracle SQL</span><div class="bar-track"><div class="bar-fill" style="width:86%;animation-delay:.85s"></div></div><span class="bar-pct">86</span></div>
+            <div class="bar-row"><span class="bar-name">ETL / BI</span><div class="bar-track"><div class="bar-fill" style="width:92%;animation-delay:.95s"></div></div><span class="bar-pct">92</span></div>
+          </div>
+          <div class="source-strip">
+            <span>Ellipse</span><span>AMT</span><span>VisionLink</span><span>Minecare</span><span>My Epiroc</span><span>Global Services</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="sobre-mi">
+      <div class="section-label reveal">Sobre mí</div>
+      <h2 class="section-title reveal">Datos, automatización<br>y resultados de negocio</h2>
+      <p class="section-sub reveal reveal-d1">
+        Construyo soluciones de datos que conectan la operación con la toma de decisiones: desde extracción y validación de información, hasta tableros ejecutivos y automatizaciones que reducen trabajo manual.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-text reveal reveal-d1">
+          <p>
+            Soy <strong>Ingeniero de Sistemas</strong> con más de 3 años de experiencia construyendo soluciones de datos en entornos empresariales del sector mantenimiento e industria minera. Me especializo en transformar información dispersa en indicadores claros que impulsan decisiones operativas y gerenciales.
+          </p>
+          <p>
+            Mi enfoque combina <strong>rigor técnico con comprensión del negocio</strong>: no solo construyo consultas SQL o dashboards, también interpreto las reglas operativas detrás de cada indicador, como disponibilidad de flota, cumplimiento de estrategias de mantenimiento, trabajo pendiente y captura de SMU/horómetros.
+          </p>
+          <p>
+            He trabajado integrando información desde <strong>Ellipse, AMT, VisionLink, Minecare, My Epiroc, Global Services, SQL Server, Oracle y Excel</strong>, construyendo soluciones BI confiables, documentadas y orientadas a impacto.
+          </p>
+          <div class="chips">
+            <span class="chip">SQL Server</span><span class="chip">Oracle SQL</span><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Python</span><span class="chip">ETL</span><span class="chip">SSRS</span><span class="chip">Automatización</span>
+          </div>
+        </div>
+
+        <aside class="profile-card reveal reveal-d2">
+          <div class="card-label">Perfil profesional</div>
+          <div class="info-row"><span>Formación</span><span>Ingeniero de Sistemas</span></div>
+          <div class="info-row"><span>Experiencia</span><span>+3 años en datos</span></div>
+          <div class="info-row"><span>Foco</span><span>BI · ETL · SQL · Python</span></div>
+          <div class="info-row"><span>Sector</span><span>Minería / Mantenimiento</span></div>
+          <div class="info-row"><span>Roles objetivo</span><span>Data Analyst · Data Engineer · BI Developer</span></div>
+        </aside>
+      </div>
+
+      <div class="about-mini-grid reveal reveal-d2">
+        <div class="info-card"><div class="info-icon">🔎</div><div class="info-title">Análisis de reglas de negocio</div><div class="info-desc">Traduzco reglas operativas complejas en lógica SQL, DAX y modelos analíticos confiables.</div></div>
+        <div class="info-card"><div class="info-icon">📊</div><div class="info-title">Dashboards ejecutivos</div><div class="info-desc">Construyo tableros Power BI orientados a indicadores, metas, rankings y desviaciones.</div></div>
+        <div class="info-card"><div class="info-icon">⚙️</div><div class="info-title">Automatización y ETL</div><div class="info-desc">Automatizo extracción, transformación, validación y consolidación de datos multi-fuente.</div></div>
+      </div>
+    </section>
+
+    <section class="section-wide" id="habilidades">
+      <div class="section-inner">
+        <div class="section-label reveal">Habilidades técnicas</div>
+        <h2 class="section-title reveal">Stack de trabajo</h2>
+        <p class="section-sub reveal reveal-d1">Herramientas que uso para transformar datos crudos en información accionable, reportes confiables y procesos automatizados.</p>
+        <div class="skills-grid">
+          <div class="skill-card reveal"><div class="skill-icon">📊</div><div class="skill-name">Business Intelligence</div><div class="skill-desc">Tableros ejecutivos y operativos con modelado, DAX y narrativa visual.</div><div class="skill-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">KPIs</span><span class="tag">Modelado estrella</span></div></div>
+          <div class="skill-card reveal reveal-d1"><div class="skill-icon">🗄️</div><div class="skill-name">Bases de datos</div><div class="skill-desc">Consultas complejas, procedimientos, funciones analíticas y optimización.</div><div class="skill-tags"><span class="tag">SQL Server</span><span class="tag">Oracle SQL</span><span class="tag">T-SQL</span><span class="tag">CTEs</span><span class="tag">OPENQUERY</span></div></div>
+          <div class="skill-card reveal reveal-d2"><div class="skill-icon">🐍</div><div class="skill-name">Python y automatización</div><div class="skill-desc">Scripts para ETL, validaciones, extracción web, APIs y bots de interfaz.</div><div class="skill-tags"><span class="tag">Pandas</span><span class="tag">PyODBC</span><span class="tag">Requests</span><span class="tag">BeautifulSoup</span><span class="tag">PyAutoGUI</span></div></div>
+          <div class="skill-card reveal"><div class="skill-icon">🔄</div><div class="skill-name">ETL e integración</div><div class="skill-desc">Pipelines multi-fuente con reglas de calidad, staging y trazabilidad.</div><div class="skill-tags"><span class="tag">ETL</span><span class="tag">Staging</span><span class="tag">Validaciones</span><span class="tag">Data Quality</span></div></div>
+          <div class="skill-card reveal reveal-d1"><div class="skill-icon">📋</div><div class="skill-name">Reportería</div><div class="skill-desc">Reportes paginados, parametrizados y listos para distribución operativa.</div><div class="skill-tags"><span class="tag">Report Builder</span><span class="tag">SSRS</span><span class="tag">Excel</span><span class="tag">SharePoint</span></div></div>
+          <div class="skill-card reveal reveal-d2"><div class="skill-icon">🏭</div><div class="skill-name">Dominio funcional</div><div class="skill-desc">Indicadores de mantenimiento, disponibilidad, órdenes de trabajo y SMU.</div><div class="skill-tags"><span class="tag">SGIA</span><span class="tag">AMT</span><span class="tag">Ellipse</span><span class="tag">SMU</span><span class="tag">Flotas</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="section-label reveal">Proyectos destacados</div>
+      <h2 class="section-title reveal">Casos de estudio con<br>impacto operativo real</h2>
+      <p class="section-sub reveal reveal-d1">Proyectos desarrollados en entornos industriales donde la calidad del dato, la trazabilidad y la automatización son críticas.</p>
+
+      <div class="projects-grid">
+        <article class="project-card featured reveal" data-proj="0">
+          <div>
+            <div class="project-number">01</div>
+            <h3 class="project-title">Tablero de Indicadores SGIA de Mantenimiento</h3>
+            <p class="project-desc">Desarrollo y mantenimiento de tableros Power BI para seguimiento de disponibilidad, cumplimiento de estrategias, rankings, metas, desviaciones y trabajo pendiente de equipos de flota.</p>
+            <p class="project-problem">Problema: la información estaba fragmentada entre múltiples sistemas y no existía una vista consolidada para la toma de decisiones.</p>
+            <div class="project-meta"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL Server</span><span class="tag">Oracle SQL</span><span class="tag">Stored Procedures</span></div>
+            <span class="project-result">⚡ Visibilidad unificada para mantenimiento y operaciones</span><br><br>
+            <button class="btn btn-outline" onclick="openModal(0)">Ver detalle</button>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="visual-head"><span>SGIA Dashboard</span><span>BI Layer</span></div>
+            <div class="kpi-grid"><div class="kpi-box"><div class="kpi-value">DAX</div><div class="kpi-label">Indicadores</div></div><div class="kpi-box"><div class="kpi-value">SQL</div><div class="kpi-label">Modelo</div></div></div>
+            <div class="bars"><div class="p-bar" style="height:42%"></div><div class="p-bar" style="height:64%;animation-delay:.12s"></div><div class="p-bar" style="height:52%;animation-delay:.2s"></div><div class="p-bar" style="height:86%;animation-delay:.28s"></div><div class="p-bar" style="height:70%;animation-delay:.36s"></div><div class="p-bar" style="height:92%;animation-delay:.44s"></div></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-proj="1"><div class="project-number">02</div><h3 class="project-title">Automatización ETL de SMU y Horómetros</h3><p class="project-desc">Pipeline en Python para capturar, transformar y validar estadísticas de operación desde VisionLink, Minecare, My Epiroc y archivos Excel.</p><p class="project-problem">Problema: la actualización manual consumía horas y generaba inconsistencias.</p><div class="project-meta"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">PyODBC</span><span class="tag">SQL Server</span><span class="tag">APIs</span></div><span class="project-result">⚙️ Consolidación multi-fuente automatizada</span><br><br><button class="btn btn-outline" onclick="openModal(1)">Ver detalle</button></article>
+        <article class="project-card reveal reveal-d1" data-proj="2"><div class="project-number">03</div><h3 class="project-title">Optimización SQL en Oracle y SQL Server</h3><p class="project-desc">Reingeniería de consultas críticas sobre tablas transaccionales de alto volumen usando CTEs, funciones analíticas, staging y Linked Servers.</p><p class="project-problem">Problema: consultas pesadas contra Ellipse degradaban rendimiento y mantenimiento.</p><div class="project-meta"><span class="tag">Oracle SQL</span><span class="tag">T-SQL</span><span class="tag">OPENQUERY</span><span class="tag">CTEs</span><span class="tag">Staging</span></div><span class="project-result">🗄️ Consultas más mantenibles y eficientes</span><br><br><button class="btn btn-outline" onclick="openModal(2)">Ver detalle</button></article>
+        <article class="project-card reveal" data-proj="3"><div class="project-number">04</div><h3 class="project-title">Bot de Actualización Masiva en AMT</h3><p class="project-desc">Robot de interfaz gráfica para actualizar campos de órdenes de trabajo, estados de usuario y fechas de notificación, con validación previa y trazabilidad.</p><p class="project-problem">Problema: cientos de actualizaciones manuales con alto riesgo de error.</p><div class="project-meta"><span class="tag">Python</span><span class="tag">PyAutoGUI</span><span class="tag">SQL Server</span><span class="tag">Excel</span></div><span class="project-result">🤖 Menos trabajo manual y mayor control</span><br><br><button class="btn btn-outline" onclick="openModal(3)">Ver detalle</button></article>
+        <article class="project-card reveal reveal-d1" data-proj="4"><div class="project-number">05</div><h3 class="project-title">SGMB — Sistema de Monitoreo de Líneas de Bombeo Minero</h3><p class="project-desc">Aplicación web interna para visualizar líneas de bombeo por niveles y posiciones, mostrando estaciones, componentes, horas operadas y flujo entre niveles.</p><p class="project-problem">Problema: seguimiento en planillas sin contexto visual de la topología real.</p><div class="project-meta"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">SQL Server</span></div><span class="project-result">🌐 Vista operativa de infraestructura minera</span><br><br><button class="btn btn-outline" onclick="openModal(4)">Ver detalle</button></article>
+        <article class="project-card reveal" data-proj="5"><div class="project-number">06</div><h3 class="project-title">Reportes Paginados y Tableros Operativos</h3><p class="project-desc">Suite de reportes en Report Builder, SSRS y Power BI para seguimiento de órdenes de trabajo, eventos, disponibilidad y mantenimiento preventivo.</p><p class="project-problem">Problema: usuarios requerían reportes imprimibles/exportables con filtros operativos.</p><div class="project-meta"><span class="tag">Report Builder</span><span class="tag">SSRS</span><span class="tag">SQL Server</span><span class="tag">Power BI</span></div><span class="project-result">📋 Reportería parametrizada para operación y gerencia</span><br><br><button class="btn btn-outline" onclick="openModal(5)">Ver detalle</button></article>
+      </div>
+    </section>
+
+    <section class="section-wide" id="logros">
+      <div class="section-inner timeline-wrap">
+        <div>
+          <div class="section-label reveal">Logros y experiencia</div>
+          <h2 class="section-title reveal">Lo que he construido</h2>
+          <p class="section-sub reveal reveal-d1" style="margin-bottom:0">Resultados tangibles entregados en proyectos reales bajo restricciones operativas reales.</p>
+        </div>
+        <div class="timeline reveal reveal-d1">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Automatización</div><div class="tl-role">Procesos manuales críticos</div><div class="tl-desc">Scripts Python para consolidar, validar y actualizar información desde múltiples sistemas, reduciendo error humano y liberando tiempo analítico.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Business Intelligence</div><div class="tl-role">Tableros SGIA adoptados por usuarios clave</div><div class="tl-desc">Dashboards Power BI para seguimiento de disponibilidad, cumplimiento de estrategias y trabajo pendiente.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">SQL avanzado</div><div class="tl-role">Optimización de consultas de alto impacto</div><div class="tl-desc">Rediseño de consultas Oracle/Ellipse y SQL Server con staging, CTEs, funciones analíticas y procedimientos documentados.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Integración</div><div class="tl-role">Más de 6 sistemas integrados</div><div class="tl-desc">Integración de Ellipse, AMT, VisionLink, Minecare, My Epiroc, Global Services y Excel en capas analíticas consistentes.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Documentación</div><div class="tl-role">Estandarización técnica</div><div class="tl-desc">Documentación de procedimientos, reglas de negocio, cambios y lógica de cálculo para facilitar mantenimiento y transferencia de conocimiento.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="section-label reveal">Áreas donde puedo aportar</div>
+      <h2 class="section-title reveal">Servicios y capacidades</h2>
+      <p class="section-sub reveal reveal-d1">Capacidades con impacto directo en eficiencia operativa, calidad del dato y visibilidad del negocio.</p>
+      <div class="services-grid">
+        <div class="service-card reveal"><div class="service-icon">📊</div><div class="service-title">Dashboards Power BI</div><div class="service-desc">Tableros ejecutivos y operativos con DAX, modelado y conexión multi-fuente.</div></div>
+        <div class="service-card reveal reveal-d1"><div class="service-icon">🗄️</div><div class="service-title">Optimización SQL</div><div class="service-desc">Reingeniería de consultas complejas en SQL Server y Oracle.</div></div>
+        <div class="service-card reveal reveal-d2"><div class="service-icon">🤖</div><div class="service-title">Automatización Python</div><div class="service-desc">Scripts, bots, reportes automáticos, APIs y scraping controlado.</div></div>
+        <div class="service-card reveal reveal-d3"><div class="service-icon">⚙️</div><div class="service-title">Construcción ETL</div><div class="service-desc">Pipelines robustos con validaciones, trazabilidad y manejo de errores.</div></div>
+        <div class="service-card reveal"><div class="service-icon">📋</div><div class="service-title">Reportes gerenciales</div><div class="service-desc">Reportes paginados en SSRS / Report Builder listos para distribución.</div></div>
+        <div class="service-card reveal reveal-d1"><div class="service-icon">🔍</div><div class="service-title">Validación de datos</div><div class="service-desc">Perfilado de datasets, inconsistencias y reglas de negocio.</div></div>
+        <div class="service-card reveal reveal-d2"><div class="service-icon">📝</div><div class="service-title">Documentación técnica</div><div class="service-desc">Procedimientos, diccionarios, reglas de negocio y arquitecturas BI.</div></div>
+        <div class="service-card reveal reveal-d3"><div class="service-icon">🌐</div><div class="service-title">Apps internas</div><div class="service-desc">Interfaces web ligeras para operación, monitoreo y consulta de información.</div></div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contact-wrap reveal">
+        <h2>¿Hablamos de datos?</h2>
+        <p>Estoy disponible para nuevas oportunidades como <strong>Analista de Datos, Ingeniero de Datos o Desarrollador BI</strong>. Si tienes un reto de datos, automatización o BI, hablemos.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/jesus-arismendy-lobato-503a44201/" class="contact-link" target="_blank" rel="noopener">💼 LinkedIn · Jesus Arismendy Lobato</a>
+          <a href="https://github.com/Arismendy08" class="contact-link" target="_blank" rel="noopener">🐙 GitHub · Arismendy08</a>
+          <a href="https://wa.me/573043408765" class="contact-link" target="_blank" rel="noopener">💬 WhatsApp · 304 340 8765</a>
+        </div>
+        <a href="CV-Jesus-Arismendy-Lobato.pdf" class="btn btn-primary" download>Descargar CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Jesús Arismendy Lobato · Data Analyst · Data Engineer · BI Developer · SQL · Power BI · Python · ETL
+  </footer>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar modal">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        num: 'PROYECTO_01',
+        title: 'Tablero de Indicadores SGIA de Mantenimiento',
+        desc: 'Desarrollo y mantenimiento de tableros Power BI para seguimiento integral de indicadores de mantenimiento a nivel operativo y gerencial: disponibilidad, cumplimiento de estrategias preventivas y correctivas, rankings, metas y trabajo pendiente.',
+        problem: 'La información clave del área de mantenimiento estaba fragmentada en Ellipse, AMT y reportes independientes. No existía una vista unificada para comparar desempeño real versus meta operativa.',
+        techs: ['Power BI', 'DAX avanzado', 'Power Query', 'SQL Server', 'Oracle SQL', 'Stored Procedures'],
+        achievements: ['Consolidación de información desde sistemas Ellipse, AMT y archivos Excel.', 'Creación de medidas DAX para cumplimiento, rankings, metas y desviaciones.', 'Validación y documentación de reglas de negocio por indicador.', 'Tablero orientado a la toma de decisiones de mantenimiento y operaciones.']
+      },
+      {
+        num: 'PROYECTO_02',
+        title: 'Automatización ETL de SMU y Horómetros',
+        desc: 'Pipeline ETL en Python para capturar, transformar y validar estadísticas operativas de equipos de flota desde VisionLink, Minecare, My Epiroc y archivos Excel.',
+        problem: 'La captura manual requería consultar varias fuentes, cruzar datos y validar inconsistencias de forma repetitiva.',
+        techs: ['Python', 'Pandas', 'PyODBC', 'Requests', 'BeautifulSoup', 'SQL Server', 'APIs', 'Excel'],
+        achievements: ['Automatización del proceso de consolidación multi-fuente.', 'Reglas de validación como máximo 24h/día, negativos y fechas desactualizadas.', 'Tabla consolidada para análisis y actualización de estrategias.', 'Trazabilidad por fuente de datos.']
+      },
+      {
+        num: 'PROYECTO_03',
+        title: 'Optimización SQL en Oracle y SQL Server',
+        desc: 'Reingeniería de consultas críticas sobre bases de datos transaccionales de alto volumen usando CTEs, funciones analíticas, staging tables, Linked Servers y OPENQUERY.',
+        problem: 'Consultas pesadas contra Ellipse y SQL Server afectaban tiempos de ejecución, mantenimiento y estabilidad operativa.',
+        techs: ['Oracle SQL', 'T-SQL', 'SQL Server', 'OPENQUERY', 'Linked Servers', 'CTEs', 'Funciones analíticas'],
+        achievements: ['Reescritura con filtros tempranos y mejor separación de lógica.', 'Procedimientos almacenados modulares y documentados.', 'Uso de staging para desacoplar extracción y transformación.', 'Mejora en mantenibilidad y rendimiento.']
+      },
+      {
+        num: 'PROYECTO_04',
+        title: 'Bot de Actualización Masiva en AMT',
+        desc: 'Robot de automatización de interfaz para actualizar masivamente campos en AMT: estados de órdenes de trabajo, usuarios y fechas de notificación.',
+        problem: 'Los analistas debían actualizar cientos de registros uno a uno, con alto consumo de tiempo y riesgo de error.',
+        techs: ['Python', 'PyAutoGUI', 'SQL Server', 'Pandas', 'Excel'],
+        achievements: ['Validación previa desde base de datos.', 'Generación de archivos de control con registros procesados y errores.', 'Mayor trazabilidad del proceso.', 'Reducción del trabajo manual repetitivo.']
+      },
+      {
+        num: 'PROYECTO_05',
+        title: 'SGMB — Sistema de Monitoreo de Líneas de Bombeo Minero',
+        desc: 'Aplicación web interna para visualizar líneas de bombeo organizadas por niveles, posiciones y estaciones, mostrando componentes instalados, horas operadas y flujo entre niveles.',
+        problem: 'El seguimiento se realizaba en planillas sin contexto visual de la topología real del sistema de bombeo.',
+        techs: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'SQL Server'],
+        achievements: ['Diseño visual tipo dashboard operativo.', 'Separación de frontend, backend y capa SQL.', 'Visualización dinámica de estaciones y componentes.', 'Base para evolucionar hacia monitoreo de activos.']
+      },
+      {
+        num: 'PROYECTO_06',
+        title: 'Reportes Paginados y Tableros Operativos',
+        desc: 'Suite de reportes en Report Builder / SSRS y Power BI para seguimiento de órdenes de trabajo, eventos, disponibilidad histórica y mantenimiento preventivo.',
+        problem: 'Los usuarios requerían reportes detallados, exportables e imprimibles con filtros por período, equipo y área.',
+        techs: ['Report Builder', 'SSRS', 'SQL Server', 'T-SQL', 'Power BI', 'DAX'],
+        achievements: ['Reportes paginados parametrizados.', 'Consultas optimizadas con parámetros dinámicos.', 'Reportería orientada a usuarios operativos y gerenciales.', 'Documentación de parámetros y lógica de cálculo.']
+      }
+    ];
+
+    function openModal(idx) {
+      const p = projects[idx];
+      document.getElementById('modal-content').innerHTML = `
+        <div class="modal-num">${p.num}</div>
+        <div class="modal-title">${p.title}</div>
+        <div class="modal-section-title">Descripción</div>
+        <div class="modal-desc">${p.desc}</div>
+        <div class="modal-section-title">Problema resuelto</div>
+        <div class="modal-desc" style="border-left:2px solid var(--accent);padding-left:.8rem;font-style:italic">${p.problem}</div>
+        <div class="modal-section-title">Tecnologías</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem">${p.techs.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+        <div class="modal-section-title">Logros clave</div>
+        <ul class="modal-list">${p.achievements.map(a => `<li>${a}</li>`).join('')}</ul>
+      `;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = document.querySelectorAll('main [id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        const top = s.offsetTop - 110;
+        if (window.scrollY >= top) current = s.id;
+      });
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    });
+  </script>
+</body>
+</html>
